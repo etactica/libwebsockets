@@ -121,6 +121,7 @@ __lws_sul_service_ripe(lws_dll2_owner_t *own, lws_usec_t usnow)
 							lws_dll2_get_head(own);
 
 		assert(sul->us); /* shouldn't be on the list otherwise */
+		lwsl_info("KK: usnow=%llu, sul->us=%llu\n", usnow, sul->us);
 
 		if (sul->us > usnow)
 			return sul->us - usnow;
