@@ -111,8 +111,10 @@ __lws_sul_service_ripe(lws_dll2_owner_t *own, lws_usec_t usnow)
 			lws_container_of(own, struct lws_context_per_thread,
 					 pt_sul_owner);
 
+	lwsl_info("KK: entry: usnow=%llu\n", usnow);
 	if (pt->attach_owner.count)
 		lws_system_do_attach(pt);
+
 
 	while (lws_dll2_get_head(own)) {
 
