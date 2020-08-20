@@ -111,7 +111,8 @@ __lws_sul_service_ripe(lws_dll2_owner_t *own, lws_usec_t usnow)
 			lws_container_of(own, struct lws_context_per_thread,
 					 pt_sul_owner);
 
-	lwsl_info("KK: entry: usnow=%llu\n", usnow);
+	fprintf(stderr, "KKff: entry: usnow=%llu\n", usnow);
+	lwsl_err("KK: entry: usnow=%llu\n", usnow);
 	if (pt->attach_owner.count)
 		lws_system_do_attach(pt);
 
@@ -123,7 +124,7 @@ __lws_sul_service_ripe(lws_dll2_owner_t *own, lws_usec_t usnow)
 							lws_dll2_get_head(own);
 
 		assert(sul->us); /* shouldn't be on the list otherwise */
-		lwsl_info("KK: usnow=%llu, sul->us=%llu\n", usnow, sul->us);
+		lwsl_err("KK: usnow=%llu, sul->us=%llu\n", usnow, sul->us);
 
 		if (sul->us > usnow)
 			return sul->us - usnow;
